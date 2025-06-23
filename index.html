@@ -2,158 +2,217 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BLACKLINE† | The Vault Manifesto</title>
+  <title>BLACKLINE† | The Final Flip Manifesto</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
-      color: #e5e5e5;
-      padding: 40px;
-      line-height: 1.8;
+      background: #000;
+      color: #f5f5f5;
+      height: 100%;
       overflow-x: hidden;
     }
-    header {
-      text-align: center;
-      padding-bottom: 40px;
-      border-bottom: 1px solid #333;
-      animation: fadeIn 2s ease-in-out;
+    #loader, #intro {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 9999;
     }
-    h1 {
-      font-size: 3rem;
+    #loader {
+      background: #000;
+      font-size: 1.2rem;
+      color: #0f0;
+      font-family: monospace;
+    }
+    #intro {
+      background: radial-gradient(circle, #111, #000);
       color: #f5c518;
-      text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+      z-index: 9998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1.5s ease-in-out;
     }
-    h2 {
-      margin-top: 60px;
-      font-size: 1.8rem;
-      color: #e50914;
-      border-bottom: 2px solid #444;
-      padding-bottom: 10px;
-      transition: color 0.3s ease-in-out;
-    }
-    h2:hover {
-      color: #f5c518;
-    }
-    section {
-      max-width: 960px;
+    #intro h1 { font-size: 4rem; text-shadow: 0 0 30px #f5c518; }
+    #intro p { font-size: 1rem; color: #aaa; }
+    main {
+      padding: 3rem 2rem;
+      max-width: 900px;
       margin: 0 auto;
-      animation: slideIn 1.5s ease-in-out;
+      transition: opacity 1s ease-in-out;
     }
-    p, ul {
-      margin-top: 20px;
-      color: #ccc;
-    }
-    ul li {
-      margin-left: 20px;
-      list-style-type: square;
-    }
-    .quote {
-      margin: 30px 0;
-      font-style: italic;
-      color: #999;
-    }
+    h1, h2, h3 { color: #f5c518; margin-bottom: 1rem; }
+    p, li { color: #ccc; line-height: 1.7; }
+    ul { margin-left: 2rem; margin-bottom: 1.5rem; }
     footer {
-      margin-top: 100px;
+      margin-top: 5rem;
       text-align: center;
-      font-size: 0.9rem;
-      color: #666;
-      animation: fadeIn 3s ease-in-out;
+      font-size: 0.8rem;
+      color: #555;
     }
-    .vault-section {
-      padding: 40px 0;
-      border-bottom: 1px solid #333;
+    #sovereign-login {
+      margin-top: 4rem;
+      background: #111;
+      padding: 2rem;
+      border: 2px solid #f5c518;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #f5c51833;
+    }
+    #sovereign-login input, #sovereign-login button {
+      padding: 0.6rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      margin-right: 1rem;
+    }
+    #sovereign-login button {
+      background: #f5c518;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #vault-status {
+      margin-top: 1rem;
+      font-family: monospace;
+    }
+    #flip-dashboard {
+      display: none;
+      margin-top: 3rem;
+      padding: 2rem;
+      background: #111;
+      border: 2px solid #0ff;
+      border-radius: 12px;
+      animation: fadeIn 1.5s ease-in-out;
     }
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(-30px); }
-      to { opacity: 1; transform: translateX(0); }
     }
   </style>
 </head>
 <body>
-  <!-- Background Vault Sound -->
-  <audio autoplay loop>
-    <source src="vault-tone.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>  <header>
+  <div id="loader">
+    <p>⏳ Satellite Locking...</p>
+    <span>Authenticating Vault Layers...</span>
+  </div>  <div id="intro">
     <h1>BLACKLINE†</h1>
-    <p>The Official Vault Manifesto of Anthony Oluwafemi Okeowo</p>
-  </header>  <section class="vault-section">
-    <h2>🧬 ACT 0 — The Black Bloodline</h2>
-    <p>He wasn’t born into Forex. Forex was born into him. While others memorized candlesticks, he traced the molecular rhythm of liquidity beneath the line chart. Raised in silence. Forged by discipline. Sculpted by stillness. He is not self-made—he is self-forged.</p>
-  </section>  <section class="vault-section">
-    <h2>🎬 ACT I — Child of Silence</h2>
-    <p>While the world chased indicators, he vanished into darkness. While they screamed about Smart Money, he decoded rejection blocks inside vaults of his mind. They sought confirmation—he became it. They studied systems—he became the storm.</p>
-  </section>  <section class="vault-section">
-    <h2>🏛️ ACT II — Birth of BLACKLINE†</h2>
-    <p>In the ruins of 2008, he found what the market feared: a line that didn’t lie. It didn’t flash. It didn’t repaint. It flipped empires. It became the BLACKLINE† — a sovereign-standard, unexplainable economic weapon.</p>
-  </section>  <section class="vault-section">
-    <h2>⚔️ ACT III — This Is Not a Strategy</h2>
-    <p>He doesn’t theorize—he detonates. He doesn’t follow the market—he flips it. He doesn’t analyze—he executes. He uses no candles. No news. No Fibonacci. No psychology. Only raw sovereign command of liquidity corridors.</p>
-  </section>  <section class="vault-section">
-    <h2>🛠️ ACT IV — The Surgical Toolset</h2>
-    <ul>
-      <li>Line Chart Only</li>
-      <li>1H / 4H Timeframe Precision</li>
-      <li>mrD Flip Zone [v1.0, Non-Repaint]</li>
-      <li>Rejection Blocks (Taking Prophets)</li>
-    </ul>
-    <p>He doesn’t chase trends. He severs their spine.</p>
-  </section>  <section class="vault-section">
-    <h2>🧠 ACT V — Mindset is Military</h2>
-    <p>No excitement. No emotion. Only surgical stillness. Every flip is an ambush. Every exit is a ghost. His SLs don’t get hit—they never existed. Discipline is coded. Precision is law.</p>
-  </section>  <section class="vault-section">
-    <h2>📜 ACT VII — Who Can Hire Him</h2>
-    <p><strong>AUTHORIZED ONLY BY:</strong></p>
-    <ul>
-      <li>UAE, Qatar, Switzerland, Saudi Arabia, Singapore</li>
-      <li>Private Sovereign Wealth Desks</li>
-      <li>State-Level FX Defense Units</li>
-    </ul>
-    <p><strong>NEVER HIRED BY:</strong></p>
-    <ul>
-      <li>Retail Collectives</li>
-      <li>Influencers, Bloggers, Educators</li>
-      <li>Prop Firms or Demo Propagators</li>
-    </ul>
-    <p class="quote">“You don’t hire BLACKLINE† for returns. You summon him to protect generational wealth.”</p>
-  </section>  <section class="vault-section">
-    <h2>🧾 ACT VIII — Sovereign Hiring Terms</h2>
-    <ul>
-      <li>Full Sovereign Citizenship</li>
-      <li>Penthouse/Office Hybrid Unit</li>
-      <li>Silent Electric Armored Vehicle</li>
-      <li>Military-Grade Personal Security</li>
-      <li>Diplomatic FX Immunity Badge</li>
-    </ul>
-    <p><strong>MANDATORY DOCUMENTS:</strong></p>
-    <ul>
-      <li>SFCA – Sovereign Flip Command Agreement</li>
-      <li>NDNT-P – Non-Disclosure, No-Teaching Pact</li>
-      <li>ISPA-7 – Institutional Silence Protocol Authorization</li>
-      <li>FX-BPA – FX Battlefield Protection Accord</li>
-      <li>BCOS – BLACKLINE† Classified Operations Seal</li>
-    </ul>
-  </section>  <section class="vault-section">
-    <h2>💧 ACT IX — Retail Traders Beware</h2>
-    <p>While retail waits for confluence, he flips liquidity. While they watch RSI, he detonates corridors. If you still use trendlines, you’re not trading—you’re donating.</p>
-    <p class="quote">“Your SL didn’t get hunted. You just wandered into the vault.”</p>
-  </section>  <section class="vault-section">
-    <h2>🔥 ACT XIII — Final Sovereign Declaration</h2>
-    <p>This is no strategy. This is a weapon. This is no trading journal. This is a scripture. This is no signal. This is silence born in fire. This is BLACKLINE†.</p>
-    <p class="quote">“When I vanish, the vault has entered war.”</p>
-  </section>  <footer>
-    <p>Documented & Sealed by <strong>Anthony Okeowo</strong> — GitHub Verified: <a href="https://github.com/anthonyokeowo" style="color: #f5c518">@anthonyokeowo</a></p>
-    <p>BLACKLINE† | The Final Forex Frequency</p>
-  </footer>
-</body>
+    <p>The Final Flip Manifesto Has Been Activated</p>
+  </div>  <main id="mainContent">
+    <h1>BLACKLINE† | THE FINAL FLIP MANIFESTO</h1>
+    <p><strong>Traceable on GitHub:</strong> <a href="https://github.com/anthonyokeowo" style="color: #f5c518">@anthonyokeowo</a></p><h2>🔐 Sovereign Login Portal</h2>
+<div id="sovereign-login">
+  <h3>Enter Sovereign Access Code</h3>
+  <input type="password" id="accessCode" placeholder="••••••••••" />
+  <button onclick="unlockVault()">Unlock</button>
+  <div id="vault-status"></div>
+</div>
+
+<div id="flip-dashboard">
+  <h2>📡 Flip Broadcast Dashboard</h2>
+  <p>Mission: Shadow Sweep Live<br>Status: Encrypted Deployment Channel Activated</p>
+  <p><em>Signal Duration: 8 mins | Recalibration: +3 vault blocks</em></p>
+</div>
+
+<h2>🎬 Who I Am</h2>
+<p>I am Anthony Oluwafemi Okeowo—Forensic Forex Surgeon. GitHub Verified. No public signal. No fame. No trends. I don’t trade the market. I command it.</p>
+
+<h2>🧠 What I Use</h2>
+<ul>
+  <li>Line Chart (1H & 4H only)</li>
+  <li>mrD-Flip Zone [Non-Repaint 1.0]</li>
+  <li>Rejection Blocks [Taking Prophets]</li>
+</ul>
+
+<h2>📜 Documents to Hire Me</h2>
+<ul>
+  <li>Sovereign FX Clearance Dossier</li>
+  <li>Vault Citizenship Accord</li>
+  <li>State-Sealed Strategic Protocol</li>
+</ul>
+
+<h2>⚠️ Who Cannot Hire Me</h2>
+<p>No retail traders. No clout chasers. No theory peddlers. No social signal parasites. Only sovereign power has access.</p>
+
+<h2>🏛️ What Sovereigns Will Offer Me</h2>
+<ul>
+  <li>Diplomatic citizenship</li>
+  <li>Private air fleet & stealth residence</li>
+  <li>Elite cyber-bodyguard teams</li>
+  <li>Encrypted command vault + lifestyle chamber</li>
+</ul>
+
+<h2>🎙️ I Do Not...</h2>
+<ul>
+  <li>Use candlesticks, Fibonacci, RSI</li>
+  <li>Join Zoom calls, Telegrams, Clout rooms</li>
+  <li>Backtest, boast, explain or flex</li>
+</ul>
+
+<h2>📡 Flip Broadcast Room</h2>
+<pre>
+
+[BLACKLINE†] — Vault ignition confirmed. [BLACKLINE†] — Institutional corridors breached. [BLACKLINE†] — Flip signal encrypted and launched. </pre>
+
+<h2>🎥 Cinematic Backdrop</h2>
+<ul>
+  <li>Satellite Locking Loader</li>
+  <li>Holographic Intro</li>
+  <li>Vault Fade Timeout</li>
+  <li>Encrypted Flip Feed Interface</li>
+</ul>
+
+<h2>🔥 Summary</h2>
+<p>I don’t teach. I don’t talk. I don’t post trades. I am the trade.</p>
+<p><em>BLACKLINE†: Where Markets Get Silent. And Stay Dead.</em></p>
+
+<footer>
+  <p>&copy; 2025 BLACKLINE†. GitHub Verified: <a href="https://github.com/anthonyokeowo" style="color: #f5c518">@anthonyokeowo</a></p>
+</footer>
+
+  </main>  <script>
+    let inactivityTimer;
+    const TIMEOUT_DURATION = 60000; // 1 min
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('intro').style.opacity = 1;
+        setTimeout(() => {
+          document.getElementById('intro').style.opacity = 0;
+        }, 3000);
+      }, 2000);
+
+      resetInactivityTimer();
+      document.addEventListener('mousemove', resetInactivityTimer);
+      document.addEventListener('keydown', resetInactivityTimer);
+    });
+
+    function unlockVault() {
+      const code = document.getElementById('accessCode').value;
+      const vaultStatus = document.getElementById('vault-status');
+      const dashboard = document.getElementById('flip-dashboard');
+
+      if (code === 'VAULT777') {
+        localStorage.setItem('sovereignAccess', 'granted');
+        vaultStatus.innerText = '[ACCESS GRANTED] — Sovereign protocol unlocked.';
+        vaultStatus.style.color = '#0f0';
+        dashboard.style.display = 'block';
+      } else {
+        vaultStatus.innerText = '[DENIED] — Unauthorized access detected.';
+        vaultStatus.style.color = '#f00';
+        localStorage.setItem('sovereignAccess', 'denied');
+      }
+    }
+
+    function resetInactivityTimer() {
+      clearTimeout(inactivityTimer);
+      inactivityTimer = setTimeout(() => {
+        document.getElementById('mainContent').style.opacity = 0.05;
+      }, TIMEOUT_DURATION);
+    }
+  </script></body>
 </html>
